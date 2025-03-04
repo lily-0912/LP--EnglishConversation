@@ -1,0 +1,71 @@
+@use "../../global/forwards" as *;
+
+// 四角いボタン
+
+.square-button{
+  width: 100%;
+  color: $color__text-button;
+  font-size: $font-size__square-button;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  background-color: $color__main;
+  border-radius: 10px;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 30px;
+  border-bottom: 5px solid $color__main-shadow;
+
+  position: relative;
+
+  transition: transform .3s, opacity .3s;
+}
+
+.square-button::after{
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid $color__sub;
+  border-right: 3px solid $color__sub;
+  transform: translateY(-50%) rotate(45deg);
+
+  position: absolute;
+  top: 50%;
+  right: 30px;
+}
+
+.square-button:hover{
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+// 楕円のボタン
+
+.ellipse-button{
+  display: block;
+  text-align: center;
+  background-color: $color__main;
+  color: $color__text-button;
+  font-size: $font-size__ellipse-button;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 12px 0;
+  line-height: 1;
+  letter-spacing: 0.1em;
+
+  box-sizing: border-box;
+  border: 3px solid $color__main;
+  transition: background-color .3s, color .3s;
+}
+
+.ellipse-button:hover{
+  background-color: $color__sub;
+  color: $color__text-sub;
+}
+
+
+@include mq("sp"){
+  .ellipse-button{
+    font-size: $font-size__sp-ellipse-button;
+  }
+}

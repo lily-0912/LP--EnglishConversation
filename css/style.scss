@@ -1,0 +1,47 @@
+@charset "UTF-8";
+// ===============================================================
+// use
+// ===============================================================
+
+// foundation
+// リセットCSS
+@use "../scss/foundation/reset";
+// ベースとなるCSS
+@use "../scss/foundation/base";
+
+// layout
+// ヘッダーCSS
+@use "../scss/layout/l-header";
+// セクションCSS
+@use "../scss/layout/l-section";
+
+// component
+// 見出しCSS
+@use "../scss/object/component/c-headline";
+// ハンバーガーCSS
+@use "../scss/object/component/c-hamburger";
+// ボタンCSS
+@use "../scss/object/component/c-button";
+
+// project
+
+// ヘッダーCSS
+@use "../scss/object/project/p-header";
+// メインビジュアルCSS
+@use "../scss/object/project/p-main-visual";
+// 選ばれる理由CSS
+@use "../scss/object/project/p-reason";
+// 受講生の声CSS
+@use "../scss/object/project/p-review";
+// スクールの概要CSS
+@use "../scss/object/project/p-about";
+// スクールの概要CSS
+@use "../scss/object/project/p-application";
+// フッターCSS
+@use "../scss/object/project/p-footer";
+
+// utility
+// マージンCSS
+@use "../scss/object/utility/u-margin";
+// パディングCSS
+@use "../scss/object/utility/u-padding";

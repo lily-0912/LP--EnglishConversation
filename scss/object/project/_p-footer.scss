@@ -1,0 +1,78 @@
+@use "../../global/forwards" as *;
+
+.l-footer{
+  background-color: $color__accent;
+}
+
+.l-footer .wrapper{
+  padding-top: 60px;
+  padding-bottom: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.l-footer__list-area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.l-footer__list-box{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.l-footer__list-box-title{
+  line-height: 1.1;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+.l-footer__ul{
+  margin-left: 10px;
+  letter-spacing: 0.1rem;
+  line-height: 1.14;
+  font-size: $font-size__footer-li;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.copyright{
+  text-align: center;
+  font-size: $font-size__copy-right;
+  letter-spacing: 0.1em;
+}
+
+@include mq("sp"){
+  .l-footer{
+    background-color: $color__accent;
+  }
+  
+  .l-footer .wrapper{
+    margin: 0 4%;
+  }
+  
+  .l-footer__list-area{
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+  
+  .l-footer__list-box{
+    flex: 1 1 50%;
+  }
+  
+  .l-footer__list-box-title{
+    font-size: $font-size__sp-footer-text;
+  }
+  
+  .l-footer__ul{
+    font-size: $font-size__sp-footer-li;
+  }
+  
+  .copyright{
+    font-size: $font-size__sp-copy-right;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../global/forwards" as *;
+
+.l-header{
+  height: 100px;
+  width: 100%;
+}
+
+@include mq("sp"){
+ 
+}

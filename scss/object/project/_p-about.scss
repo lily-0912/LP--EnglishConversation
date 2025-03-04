@@ -1,0 +1,78 @@
+@use "../../global/forwards" as *;
+
+.l-about--js{
+  padding: 60px 0;
+  background-image: url(../img/bg.gif);
+  background-repeat: repeat;
+}
+
+.l-about .wrapper{
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.l-about__ul{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 32px;
+}
+
+.l-about__li{
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: $color__sub;
+  border-radius: 20px;
+}
+
+.l-about__title{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+
+  .ja{
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: $font-size__section-sub-title;
+  }
+
+  .en{
+    font-weight: bold;
+    font-size: $font-size__large-text;
+    line-height: 1;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+@include mq("sp"){
+  .l-about .wrapper{
+    margin: 0 4%;
+  }
+  
+  .l-about__ul{
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 32px;
+  }
+  
+  .l-about__li{
+    padding: 30px;
+  }
+  
+  .l-about__title{
+    .ja{
+      font-size: $font-size__sp-section-sub-title;
+    }
+  
+    .en{
+      font-size: $font-size__sp-large-text;
+    }
+  }
+  
+  
+}

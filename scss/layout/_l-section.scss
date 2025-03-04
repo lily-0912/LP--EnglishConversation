@@ -1,0 +1,12 @@
+@use "../global/forwards" as *;
+
+.l-section{
+  margin-top: 120px;
+}
+
+
+@include mq("sp"){
+  .l-section{
+    margin-top: 80px;
+  }
+}

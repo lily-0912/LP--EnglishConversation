@@ -1,0 +1,176 @@
+@use "../../global/forwards" as *;
+
+.site-title--white{
+  z-index: 400;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.l-header__nav{
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity .5s , visibility .5s;
+}
+
+.l-header__ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.l-header__li{
+  color: $color__text-button;
+  font-size: $font-size__text;
+  font-weight: bold;
+  text-align: center;
+}
+
+.l-header__li--application{
+  width: calc(100% + 46.5px * 2);
+  margin-top: 35px;
+  padding: 15px 0;
+  border: 1px solid $color__sub;
+
+  position: relative;
+}
+
+.l-header__li--application::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid $color__sub;
+  border-bottom: 1px solid $color__sub;
+
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+
+.hamburger{
+  width: 100px;
+  height: 100px;
+  background-color: $color__main;
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.hamburger-area{
+  position: relative;
+}
+
+.hamburger-border{
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: $color__sub;
+
+  position: absolute;
+  left: 25px;
+
+  transition: all .5s;
+}
+
+.hamburger-border-top{
+  top: 36px;
+}
+
+.hamburger-border-center{
+  top: 50px;
+}
+
+.hamburger-border-bottom{
+  top: 64px;
+}
+
+.hamburger-background{
+  background-color: $color__main;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity .5s , visibility .5s;
+}
+
+.nav-open{
+
+  .site-title--red{
+    display: none;
+  }
+
+  .site-title--white{
+    opacity: 1;
+    visibility: visible;
+
+  }
+
+  .l-header__nav{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  .hamburger-border-top{
+    top: 50px;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger-border-center{
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger-border-bottom{
+    top: 50px;
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger-background{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+}
+
+@include mq("sp"){
+
+  .hamburger{
+    width: 75px;
+    height: 75px;
+  }
+
+  .hamburger-border{
+    width: 35px;
+    left: 20px;
+  }
+
+  .hamburger-border-top{
+    top: 26px;
+  }
+  
+  .hamburger-border-center{
+    top: 37px;
+  }
+  
+  .hamburger-border-bottom{
+    top: 48px;
+  }
+ 
+}

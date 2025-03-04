@@ -1,0 +1,149 @@
+@use "../../global/forwards" as *;
+
+.l-review .wrapper{
+  max-width: 860px;
+  margin: 0 auto 120px;
+}
+
+.l-review__ul{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.l-review__li{
+  width: 77%;
+  display: flex;
+  gap: 25px;
+
+  transform: scale(0);
+  transition: transform 1s;
+}
+
+.l-review__li:nth-child(even){
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+
+.l-review__li__icon-area{
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-review__icon{
+  background-color: $color__img-background;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.l-review__icon-description{
+  text-align: center;
+  font-size: $font-size__small-text;
+  line-height: 1.1;
+}
+
+.l-review__li__text-area{
+  background-color: $color__blowing-background;
+  padding: 20px;
+  border-radius: 15px;
+  height: fit-content;
+
+  position: relative;
+}
+
+.l-review__text{
+  font-size: $font-size__text;
+  letter-spacing: 0.1em;
+}
+
+.l-review__li:nth-child(odd),
+.l-review__li:nth-child(even){
+  .l-review__li__text-area::before{
+    content: "";
+    width: 21px;
+    height: 21px;
+    background-color: $color__blowing-background;
+    transform: rotate(45deg);
+  
+    position: absolute;
+    bottom: 21px;
+  }
+}
+
+.l-review__li:nth-child(odd){
+  .l-review__li__text-area::before{
+    left: -10px;
+  }
+}
+
+.l-review__li:nth-child(even){
+  .l-review__li__text-area::before{
+    right: -10px;
+  }
+}
+
+.zoom-in{
+  &.l-review__li{
+    transform: scale(100%);
+  }
+}
+
+
+
+@include mq("sp"){
+  .l-review .wrapper{
+    margin: 0 4% 80px;
+  }
+  
+  .l-review__ul{
+    gap: 40px;
+  }
+  
+  .l-review__li{
+    width: 100%;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  
+  .l-review__li:nth-child(even){
+    flex-direction: column-reverse;
+    margin-left: 0;
+  }
+  
+  .l-review__li__icon-area{
+    width: 32%;
+    margin: 0 auto;
+  }
+
+  
+  .l-review__icon-description{
+    font-size: $font-size__sp-small-text;
+  }
+  
+  .l-review__li:nth-child(odd),
+  .l-review__li:nth-child(even){
+    .l-review__li__text-area::before{
+      width: 21px;
+      height: 21px;
+      bottom: -11px;
+    }
+  }
+  
+  .l-review__li:nth-child(odd){
+    .l-review__li__text-area::before{
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+  
+  .l-review__li:nth-child(even){
+    .l-review__li__text-area::before{
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  
+  
+}

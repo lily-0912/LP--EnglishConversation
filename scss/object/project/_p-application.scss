@@ -1,0 +1,50 @@
+@use "../../global/forwards" as *;
+
+.l-application .wrapper{
+  max-width: 860px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.l-application__text-area{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.l-apprication__large-text{
+  font-weight: bold;
+  font-size: $font-size__application--large-text;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+}
+
+.l-application__small-text{
+  font-size: $font-size__large-text;
+  letter-spacing: 0.1em;
+}
+
+@include mq("sp"){
+  .l-application .wrapper{
+    margin: 0 4%;
+    margin-bottom: 80px;
+  }
+
+  .l-application__text-area{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .l-apprication__large-text{
+    font-size: $font-size__sp-application--large-text;
+  }
+  
+  .l-application__small-text{
+    font-size: $font-size__sp-text;
+  }
+}

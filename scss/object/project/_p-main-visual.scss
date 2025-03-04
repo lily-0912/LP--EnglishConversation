@@ -1,0 +1,91 @@
+@use "../../global/forwards" as *;
+
+.l-main-visual__text-area{
+  float: left;
+  margin-top: 280px;
+  margin-left: 140px;
+}
+
+.l-main-visual__catch-copy{
+  font-weight: bold;
+  color: $color__text;
+  font-size: $font-size__catch-copy;
+  text-shadow: 0 4px 6px $color__sub;
+  letter-spacing: 0.3rem;
+  line-height: 1.6;
+}
+
+.l-main-visual__img-area{
+  display: block;
+  margin-left: auto;
+  width: 75%;
+  height: 720px;
+
+  position: relative;
+
+  z-index: -1;
+}
+
+.l-main-visual__img-area::after{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  content: "";  
+  box-shadow: inset 0 0 20px 20px $color__sub;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.l-main-visual__img{
+  height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+}
+
+.fade-img{
+  &.l-main-visual__img{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@include mq("sp"){
+
+  .l-main-visual .wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+ 
+  .l-main-visual__text-area{
+    display: block;
+    float: none;
+    margin-top: 10px;
+    margin-inline: 4%;
+  }
+  
+  .l-main-visual__catch-copy{
+    font-weight: bold;
+    color: $color__text;
+    font-size: $font-size__sp-catch-copy;
+  }
+  
+  .l-main-visual__img-area{
+    display: block;
+    width: 100%;
+    height: 300px;
+  }
+  
+
+}

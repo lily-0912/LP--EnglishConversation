@@ -1,0 +1,106 @@
+@use "../../global/forwards" as *;
+
+.l-reason .wrapper{
+  background-color: $color__main;
+  padding: 80px 0;
+}
+
+.l-reason__ul{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.l-reason__li{
+  width: 50%;
+  background-color: $color__sub;
+}
+
+.l-reason__li--left{
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  transform: translateX(-100%);
+  transition: transform .5s;
+
+}
+
+.l-reason__li--right{
+  margin-left: auto;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  transform: translateX(100%);
+  transition: transform .5s;
+}
+
+.l-reason__li-content{
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.l-reason__li-img{
+  height: 60px;
+  width: fit-content;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.l-reason__sub-title{
+  line-height: 1.1;
+  font-size: $font-size__section-sub-title;
+  font-weight: bold;
+  color: $color__text-sub;
+  letter-spacing: 0.1em;
+}
+
+.l-reason__text{
+  font-size: $font-size__large-text;
+  line-height: 1.1;
+}
+
+.slide-in{
+  &.l-reason__li--left{
+    transform: translateX(0);
+  }
+
+  &.l-reason__li--right{
+    transform: translateX(0);
+  }
+}
+
+@include mq("sp"){
+ 
+  .l-reason .wrapper{
+    padding: 40px 0;
+  }
+  
+  .l-reason__li{
+    width: 95%;
+  }
+  
+  .l-reason__li-content{
+    padding: 19px 5%;
+  }
+
+  .l-reason__li--left{
+    margin-bottom: 40px;
+  }
+  
+  .l-reason__li-img{
+    height: 60px;
+    width: fit-content;
+  }
+  
+  .l-reason__sub-title{
+    font-size: $font-size__sp-section-sub-title;
+  }
+  
+  .l-reason__text{
+    font-size: $font-size__sp-large-text;
+  }
+
+}

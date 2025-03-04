@@ -1,0 +1,49 @@
+@use "../../global/forwards" as *;
+
+.site-title{
+  display: block;
+  max-width: 100px;
+  margin-left: 50px;
+}
+
+.section-title{
+  font-size: $font-size__section-title;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+  letter-spacing: 0.1em;
+  line-height: 1.13;
+
+  position: relative;
+}
+
+.section-title::after{
+  content: "";
+  width: 100px;
+  height: 3px;
+  background-color: $color__text;
+
+  position: absolute;
+  bottom: -21px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@include mq("sp"){
+ .site-title{
+  margin-left: 6%;
+ } 
+
+ .section-title{
+  font-size: $font-size__sp-section-title;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+
+  position: relative;
+ }
+
+ .section-title::after{
+    width: 80px;
+ }
+}

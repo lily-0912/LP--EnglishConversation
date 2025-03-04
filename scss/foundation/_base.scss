@@ -1,0 +1,29 @@
+// common
+@use "../global/forwards" as *;
+
+html{
+  font-size: 16px;
+}
+
+body{
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $color__text;
+  position: relative;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+p{
+  letter-spacing: 0.1rem;
+}
+
+
+
+@include mq("sp"){
+
+
+}
